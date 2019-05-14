@@ -1,0 +1,51 @@
+<div class="header container-wrapper">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
+    <!-- <div class="container"> -->
+    <a
+      class="navbar-brand"
+      [routerLink]="['']"
+      routerLinkActive="router-link-active"
+      >NextXtar</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a
+            class="nav-link"
+            [routerLink]="['']"
+            routerLinkActive="router-link-active"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/auth/login']"
+            routerLinkActive="router-link-active"
+            >Sign In</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/auth/register']"
+            routerLinkActive="router-link-active"
+            >Register</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- </div> -->
+  </nav>
+</div>

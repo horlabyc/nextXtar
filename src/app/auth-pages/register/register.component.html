@@ -1,0 +1,65 @@
+<div class="container">
+  <div id="wrapper">
+    <div id="left">
+      <div id="signin">
+        <div class="logo">
+          <!-- <img src="" alt="galaxy" /> -->
+        </div>
+        <form>
+          <div>
+            <label for="Email">Fullname</label>
+            <input type="text" class="text-input" />
+          </div>
+          <div>
+            <label for="Password">Email</label>
+            <input type="email" class="text-input" />
+          </div>
+          <div>
+            <label for="Password">Phone</label>
+            <input type="number" class="text-input" />
+          </div>
+          <div class="custom-control custom-checkbox mb-2 mr-sm-2">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customControlInline"
+            />
+            <label class="custom-control-label" for="customControlInline"
+              >I have read the terms and conditions</label
+            >
+          </div>
+          <button type="submit" class="primary-btn">Register</button>
+        </form>
+        <div class="links">
+          <a href="#">Have an account?</a>
+        </div>
+        <a
+          [routerLink]="['/auth/login']"
+          routerLinkActive="router-link-active"
+          class="secondary-btn"
+          >Sign in</a
+        >
+      </div>
+
+      <footer id="main-footer">
+        <p>Copyright &copy 2019, NextXtar All rights reserved</p>
+        <div><a href="#">terms of use</a> | <a href="#">Privacy Policy</a></div>
+      </footer>
+    </div>
+    <div id="right">
+      <div id="showcase">
+        <div class="showcase-content">
+          <h1 class="showcase-text">
+            Be a part of our musical <strong>journey</strong>
+          </h1>
+          <a
+            href=""
+            class="secondary-btn"
+            style="color:#f0f3f5; border:1px solid #f0f3f5"
+            >Sign In!</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
