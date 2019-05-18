@@ -1,10 +1,19 @@
+.navbar {
+  border: 0;
+  font-family: 'Poppins', sans-serif;
+}
 .nav-link {
   color: #d3d4d9 !important;
   font-size: 0.9rem;
+  margin-right: 40px;
 }
 .bg-dark {
-  background-color: #2e294e !important;
+  background-color: #000 !important;
 }
 .navbar-brand {
   color: #d3d4d9;
+  img {
+    height: 60px !important;
+    margin-left: 100px;
+  }
 }

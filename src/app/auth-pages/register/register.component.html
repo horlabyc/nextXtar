@@ -1,11 +1,10 @@
-<div class="container">
+<div class="container" style="margin-top:60px">
   <div id="wrapper">
     <div id="left">
       <div id="signin">
-        <div class="logo">
-          <!-- <img src="" alt="galaxy" /> -->
-        </div>
+        <div class="logo"></div>
         <form>
+          <h3 class="text-center">Create an account</h3>
           <div>
             <label for="Email">Fullname</label>
             <input type="text" class="text-input" />
@@ -15,8 +14,12 @@
             <input type="email" class="text-input" />
           </div>
           <div>
-            <label for="Password">Phone</label>
+            <label for="Phone">Phone</label>
             <input type="number" class="text-input" />
+          </div>
+          <div>
+            <label for="Password">Password</label>
+            <input type="password" class="text-input" />
           </div>
           <div class="custom-control custom-checkbox mb-2 mr-sm-2">
             <input
@@ -31,14 +34,12 @@
           <button type="submit" class="primary-btn">Register</button>
         </form>
         <div class="links">
-          <a href="#">Have an account?</a>
+          <a
+            [routerLink]="['/auth/login']"
+            routerLinkActive="router-link-active"
+            >Have an account?</a
+          >
         </div>
-        <a
-          [routerLink]="['/auth/login']"
-          routerLinkActive="router-link-active"
-          class="secondary-btn"
-          >Sign in</a
-        >
       </div>
 
       <footer id="main-footer">
@@ -48,12 +49,13 @@
     </div>
     <div id="right">
       <div id="showcase">
-        <div class="showcase-content">
+        <div class="showcase-content" [ngsReveal]="{ reset: true, duration: 2000, origin: 'top', distance: '200px'}">
           <h1 class="showcase-text">
             Be a part of our musical <strong>journey</strong>
           </h1>
           <a
-            href=""
+            [routerLink]="['/auth/login']"
+            routerLinkActive="router-link-active"
             class="secondary-btn"
             style="color:#f0f3f5; border:1px solid #f0f3f5"
             >Sign In!</a

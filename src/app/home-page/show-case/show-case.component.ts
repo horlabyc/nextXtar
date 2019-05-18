@@ -10,6 +10,7 @@ export class ShowCaseComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // console.log(#image);
   }
 
 }

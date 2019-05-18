@@ -2,9 +2,9 @@
   <div id="left">
     <div id="signin">
       <div class="logo">
-        <!-- <img src="" alt="galaxy" /> -->
       </div>
       <form>
+        <p class="text-center">Welcome back, please login to your account</p>
         <div>
           <label for="Email">Email or Username</label>
           <input type="text" class="text-input" />
@@ -32,18 +32,19 @@
     </div>
 
     <footer id="main-footer">
-      <p>Copyright &copy 2019, NextXtar All rights reserved</p>
+      <p>Copyright &copy; 2019, NextXtar All rights reserved</p>
       <div><a href="#">terms of use</a> | <a href="#">Privacy Policy</a></div>
     </footer>
   </div>
   <div id="right">
     <div id="showcase">
-      <div class="showcase-content">
+      <div class="showcase-content" [ngsReveal]="{ reset: true, duration: 2000, origin: 'bottom', distance: '200px'}">
         <h1 class="showcase-text">
           Let's create the future <strong>together</strong>
         </h1>
         <a
-          href=""
+          [routerLink]="['/auth/register']"
+          routerLinkActive="router-link-active"
           class="secondary-btn"
           style="color:#f0f3f5; border:1px solid #f0f3f5"
           >Register Now!</a
@@ -52,3 +53,36 @@
     </div>
   </div>
 </div>
+
+<!-- <section id="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-sm-12">
+       <div class="uk-card uk-card-default uk-card-body">
+        <h3 class="uk-card-title">NextXtar</h3>
+        <p>Welcome back, Please login to your account</p>
+        <div class="form">
+            <form class="uk-form-stacked">
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Email Address</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="Email address">
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Password</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" id="form-stacked-text" type="password" placeholder="Email address">
+                    </div>
+                </div>
+                <p class="text-left">Forgot password?</p>
+                <div class="button">
+                  <button type="submit" class="login-btn">Login</button>
+                </div>
+            </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section> -->

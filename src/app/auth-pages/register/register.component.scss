@@ -4,7 +4,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 300;
+  // font-weight: 300;
+  font-family: poppins
 }
 #wrapper {
   display: flex;
@@ -33,19 +34,20 @@ h6 {
 }
 #signin form {
   width: 80%;
-  padding-bottom: 3rem;
+  // padding-bottom: 3rem;
 }
 #signin .logo {
-  margin-bottom: 8vh;
+  // margin-bottom: 8vh;
 }
 #signin .logo img {
   width: 300px;
 }
 
 #signin label {
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 2rem;
   font-weight: 500;
+  margin-bottom: 0px;
 }
 
 #signin .text-input {
@@ -54,8 +56,9 @@ h6 {
   border-radius: 2px;
   background: rgba(89, 81, 122, 0.1);
   border: 1px solid #555;
+  border: 2px solid #2e294e;
   color: #59517a;
-  padding: 0.3rem 1rem;
+  padding: 0.2rem 1rem;
   line-height: 1.3rem;
 }
 #signin .primary-btn {
@@ -71,7 +74,7 @@ h6 {
 #signin .links a {
   color: #59517a;
   text-decoration: none;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   display: block;
   text-align: center;
   font-size: 0.9rem;
@@ -124,7 +127,7 @@ h6 {
   text-align: center;
   font-size: 0.8rem;
   max-width: 80%;
-  padding-top: 2rem;
+  // padding-top: 2rem;
 }
 #main-footer a {
   color: #59517a;

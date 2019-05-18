@@ -1,40 +1,21 @@
-<!-- <div class="wrapper">
-  <div class="left">
-    <img src="../../../assets/images/microphone-2130806_1920.jpg" alt="" />
-  </div>
-  <div class="right">
-    <div class="text">
-      <h1 class="text-left" style="color:aliceblue">Free Music Distribution</h1>
-      <p class="text-left">
-        Getting your music heard by the world is easy with Amuse. Upload your
-        tracks and get them distributed to all major streaming platforms and
-        music stores for free. You keep 100% of your rights and royalties.
-      </p>
-    </div>
-    <div class="readMore">
-      <button class="btn">Learn More</button>
-    </div>
-  </div>
-</div> -->
-<div class="wrapper">
-  <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12 left" style="padding:0px">
-      <img src="../../../assets/images/microphone-2130806_1920.jpg" alt="" />
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 right" style="padding:0px">
-      <div class="text">
-        <h1 class="text-left" style="color:aliceblue">
-          Free Music Distribution
-        </h1>
-        <p class="text-left">
-          Getting your music heard by the world is easy with Amuse. Upload your
-          tracks and get them distributed to all major streaming platforms and
-          music stores for free. You keep 100% of your rights and royalties.
-        </p>
+<section id="showcase">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 left">
+        <div class="showcase-left"  [ngsReveal]="{ reset: true, duration: 2000, origin: 'left', distance: '200px'}">
+          <img src="../../../assets/images/headphones_PNG.png" alt="headphone" #image>
+        </div>
       </div>
-      <div class="readMore">
-        <button class="btn">Learn More</button>
+      <div class="col-md-6 col-sm-6">
+        <div class="showcase-right" [ngsReveal]="{ reset: true, duration: 2000, origin: 'right', distance: '200px'}">
+          <h3>You have never heard your music like this!</h3>
+          <p>Getting your music heard by the world is easy with NextXtar. Upload your
+              tracks and get them distributed to all major streaming platforms and
+              music stores for free. You keep 100% of your rights and royalties.
+          </p>
+          <a class="btn btn-default btn-lg showcase-btn" [ngsReveal]="{ reset: true, delay: 500, duration: 2000, origin: 'bottom', distance: '200px'}" >Start now</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
