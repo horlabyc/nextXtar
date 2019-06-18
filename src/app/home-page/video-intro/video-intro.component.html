@@ -1,7 +1,73 @@
-<header class="video-wrapper wrapper">
+<!-- <header class="video-wrapper wrapper">
   <div class="fullscreen-video-wrap">
     <video loop controls muted playsinline uk-video="autoplay: inview">
       <source src="../../../assets/Video/Intro.mp4" />
     </video>
   </div>
-</header>
+  <div class="view">
+      <img src="../../../assets/images/guitar-756326_1920.jpg" class="img-fluid" alt="">
+      <div class="mask flex-center rgba-black-strong">
+          <h1 class="white-text">
+            Promotions on over 500 musical stores/ blog
+          </h1>
+      </div>
+  </div>
+</header> -->
+<section id="showcase">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 left">
+            <div class="showcase-right" [ngsReveal]="{ reset: true, duration: 2000, origin: 'right', distance: '200px'}">
+                <h3>You have never heard your music like this!</h3>
+                <p>Getting your music heard by the world is easy with NextXtar. Upload your
+                    tracks and get them distributed to all major streaming platforms and
+                    music stores for free. You keep 100% of your rights and royalties.
+                </p>
+                <a class="btn btn-default btn-lg showcase-btn" [ngsReveal]="{ reset: true, delay: 500, duration: 2000, origin: 'bottom', distance: '200px'}" >Start now</a>
+              </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="showcase-left"  [ngsReveal]="{ reset: true, duration: 2000, origin: 'left', distance: '200px'}">
+                <img src="../../../assets/images/headphones_PNG.png" alt="headphone" #image>
+              </div>
+
+        </div>
+      </div>
+      <!-- <vg-player>
+        <vg-overlay-play></vg-overlay-play>
+        <vg-buffering></vg-buffering>
+
+        <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+        </vg-scrub-bar>
+
+        <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button></vg-playback-button>
+
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+            <vg-track-selector></vg-track-selector>
+            <vg-mute></vg-mute>
+            <vg-volume></vg-volume>
+
+            <vg-fullscreen></vg-fullscreen>
+        </vg-controls>
+
+        <video [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>
+            <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+            <source src="http://static.videogular.com/assets/videos/videogular.ogg" type="video/ogg">
+            <source src="http://static.videogular.com/assets/videos/videogular.webm" type="video/webm">
+
+            <track kind="subtitles" label="English" src="http://static.videogular.com/assets/subs/pale-blue-dot.vtt" srclang="en" default>
+            <track kind="subtitles" label="Español" src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt" srclang="es">
+        </video>
+    </vg-player> -->
+    </div>
+  </section>

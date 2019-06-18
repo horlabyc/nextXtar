@@ -6,10 +6,11 @@ import { AuthPagesComponent } from './auth-pages.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {NgsRevealModule} from 'ngx-scrollreveal';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AuthPagesComponent, LoginComponent, RegisterComponent],
-  imports: [CommonModule, AuthPagesRoutingModule, NgsRevealModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, AuthPagesRoutingModule, NgsRevealModule],
   exports: [AuthPagesComponent]
 })
 export class AuthPagesModule {}

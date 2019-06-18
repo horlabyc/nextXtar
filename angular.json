@@ -26,11 +26,13 @@
             "styles": [
               "node_modules/angular-bootstrap-md/scss/mdb-free.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/videogular2/fonts/videogular.css",
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/scrollreveal/dist/scrollreveal.js"
+              "node_modules/scrollreveal/dist/scrollreveal.js",
+              "node_modules/crypto-js/crypto-js.js"
             ]
           },
           "configurations": {

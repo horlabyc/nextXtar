@@ -1,0 +1,46 @@
+<!-- <div class="container" style="margin-top: 150px">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+        <input #myInput class="file-upload-input" type='file' accept="file/*" formControlName="upload" />
+        <div class="center">
+          <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+          (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+              <ng-template let-openFileSelector="openFileSelector">
+                Optional custom content that replaces the the entire default content.
+                <button type="button" (click)="openFileSelector()">Browse Files</button>
+              </ng-template>
+          </ngx-file-drop>
+          <div class="upload-table">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                      </tr>
+                  </thead>
+                  <tbody class="upload-name-style">
+                      <tr *ngFor="let item of files; let i=index">
+                          <td><strong>{{ item.relativePath }}</strong></td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container" style="margin-top: 150px">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+        <div class="uk-card uk-card-default uk-card-body">
+            <div class="text-center">
+              <p id="upload">Upload file</p>
+              <button class="btn btn-secondary">Add Music</button>
+            </div>
+            <!-- <div class="col">
+              <img src="../../../assets/images/undraw_update_uxn2.svg" alt="">
+            </div> -->
+        </div>
+    </div>
+  </div>
+</div>

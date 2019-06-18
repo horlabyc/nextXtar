@@ -7,16 +7,23 @@ import { HomePageModule } from "./home-page/home-page.module";
 import { HeaderComponent } from "./Core/header/header.component";
 import { FooterComponent } from "./Core/footer/footer.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AddTokenInterceptor } from './Utilities/HttpAddTokenInterceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HomePageModule,
     AppRoutingModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [
+   {provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

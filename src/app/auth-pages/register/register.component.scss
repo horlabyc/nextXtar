@@ -60,6 +60,7 @@ h6 {
   color: #59517a;
   padding: 0.2rem 1rem;
   line-height: 1.3rem;
+  font-size: 0.8rem;
 }
 #signin .primary-btn {
   width: 100%;
@@ -170,6 +171,11 @@ h6 {
   border-color: none;
   color: #f0f3f5;
   background: #2e294e;
+}
+
+.password {
+  margin-bottom: 0px !important;
+  font-size: 0.9rem;
 }
 /*Media Queries */
 @media (min-width: 1200px) {

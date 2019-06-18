@@ -19,6 +19,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
@@ -41,5 +42,66 @@
     <!-- UIkit JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit-icons.min.js"></script>
+
+<script>
+
+  var bar = document.getElementById('js-progressbar');
+
+  UIkit.upload('.js-upload', {
+
+      url: '',
+      multiple: true,
+
+      beforeSend: function () {
+          console.log('beforeSend', arguments);
+      },
+      beforeAll: function () {
+          console.log('beforeAll', arguments);
+      },
+      load: function () {
+          console.log('load', arguments);
+      },
+      error: function () {
+          console.log('error', arguments);
+      },
+      complete: function () {
+          console.log('complete', arguments);
+      },
+
+      loadStart: function (e) {
+          console.log('loadStart', arguments);
+
+          bar.removeAttribute('hidden');
+          bar.max = e.total;
+          bar.value = e.loaded;
+      },
+
+      progress: function (e) {
+          console.log('progress', arguments);
+
+          bar.max = e.total;
+          bar.value = e.loaded;
+      },
+
+      loadEnd: function (e) {
+          console.log('loadEnd', arguments);
+
+          bar.max = e.total;
+          bar.value = e.loaded;
+      },
+
+      completeAll: function () {
+          console.log('completeAll', arguments);
+
+          setTimeout(function () {
+              bar.setAttribute('hidden', 'hidden');
+          }, 1000);
+
+          alert('Upload Completed');
+      }
+
+  });
+
+</script>
   </body>
 </html>
