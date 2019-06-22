@@ -20,7 +20,6 @@ export class TokenGeneratorService {
 
   getToken(request: HttpRequest<any>, httpHandler: HttpHandler) {
     this.http.post('https://api.nextxtar.com/TokenGen', this.body.toString(), { headers : this.header}).subscribe(res => {
-      console.log(res);
       this.access_token = res['access_token'];
       localStorage.setItem('token', JSON.stringify(this.access_token));
       this.executePendingRequest(request, httpHandler);

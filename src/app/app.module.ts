@@ -10,6 +10,7 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddTokenInterceptor } from './Utilities/HttpAddTokenInterceptor';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorHandler } from './Utilities/ErrorHandler';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MDBBootstrapModule.forRoot()
   ],
   providers: [
-   {provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true}
+   {provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true},
+   {provide: HTTP_INTERCEPTORS, useClass: ErrorHandler, multi: true}
   ],
   bootstrap: [AppComponent]
 })

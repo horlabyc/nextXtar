@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from './../../Utilities/authentication.service';
 import { takeWhile } from 'rxjs/operators';
+import * as CryptoJS from 'crypto-js';
+import { EncDecrService } from './../../Utilities/enc-decr.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   destroyed: boolean;
   isLoggedIn: boolean;
   isLoggingIn: boolean;
-  constructor(private fb: FormBuilder, private auth: AuthenticationService) {
+
+
+  constructor(private fb: FormBuilder, private auth: AuthenticationService, private crypt: EncDecrService) {
     this.destroyed = false;
     this.isLoggedIn = false;
     this.isLoggingIn = false;
@@ -29,17 +33,14 @@ export class LoginComponent implements OnInit, OnDestroy {
   signIn(formValue) {
     this.isLoggingIn = true;
     const userInfo = {...formValue};
+    const Secret = this.crypt.encrypt('$sUlAiChUnNiGeRiA@aPpDeV7%!83*#(2019)u1G', userInfo.password);
+    localStorage.setItem('Secret', JSON.stringify(Secret));
     userInfo['ApiName'] =  'NextXtar_admin';
-    console.log(userInfo);
-    this.auth.signIn(userInfo).pipe( takeWhile( () => this.destroyed)).subscribe(res =>{
+    this.auth.signIn(userInfo).subscribe(res => {
       console.log(res);
       this.isLoggingIn = false;
       this.isLoggedIn = true;
-    }, err => {
-      console.log(err);
-      this.isLoggedIn = false;
-      this.isLoggingIn = false;
-    })
+    });
   }
   ngOnInit() {
     this.createSignInForm()

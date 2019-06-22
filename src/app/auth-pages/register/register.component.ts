@@ -16,10 +16,12 @@ export class RegisterComponent implements OnInit, OnDestroy {
   isRegistered: boolean;
   isRegistering: boolean;
   isPasswordError: boolean;
+  emailExist: boolean;
   constructor(private fb: FormBuilder, private auth: AuthenticationService) {
     this.isdestroyed = false;
     this.isRegistering = false;
     this.isPasswordError = false;
+    this.emailExist = false;
   }
 
 
@@ -39,12 +41,16 @@ export class RegisterComponent implements OnInit, OnDestroy {
     const { username, email, userPhone, password } = formValue;
     const user: Account = new Account( username, email, userPhone, password);
     this.auth.signUp(user).pipe( takeWhile( () => this.isdestroyed )).subscribe(res => {
-      if (res.RespCode === 200) {
+      console.log(res);
+      if (res.RespDesc === 'Success - Check your email for activation link.') {
         this.isRegistered = true;
         this.isRegistering = false;
       }
     }, err => {
-      if ( err.error.RespCode === 400 ) {
+      console.log(err);
+      if ( err.error.RespDesc === 'Bad Request - Email already exists.') {
+        this.emailExist = true;
+      } else if ( err.error.RespDesc === 'Bad Request - Paswword complexity not met.') {
         this.isPasswordError = true;
       }
       this.isRegistered = false;

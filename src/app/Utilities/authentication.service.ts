@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpRequest, HttpHandler } from '@angular/common/http';
 import { map, shareReplay, catchError, retry, tap } from 'rxjs/operators';
 import { Account } from './../auth-pages/register/account';
 
@@ -47,9 +47,9 @@ export class AuthenticationService {
     return this.http.post('https://api.nextxtar.com/TokenGen', this.body.toString(), { headers : this.header} )
     .pipe(
       retry(3),
-      shareReplay(1),
+      shareReplay(),
       catchError(this.handleError)
-    )
+    );
   }
 
   _getToken() {
@@ -59,6 +59,11 @@ export class AuthenticationService {
     });
   }
 
+  completeRequest(request: HttpRequest<any>, next: HttpHandler) {
+    console.log('here');
+    next.handle(request).subscribe(res => {
+    }, err => console.log(err));
+  }
 
   handleError( err: HttpErrorResponse) {
     return throwError(err);
